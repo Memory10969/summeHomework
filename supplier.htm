@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		*{
+			margin:0;
+			padding: 0px;
+		}
+		.main{
+			width: 100%;
+			height: 600px;
+		}
+		.up{
+			height:24px;
+			width: 100%;
+		}
+		.btn{
+			float: right;
+		}
+	</style>
+	<script type="text/javascript">
+		function change(){
+			window.open("change.htm",'',"width=420px,height=300px,resizable=no,toolbar=no,top=200,left=500,location=no");
+		}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="up">
+			<span>快速检索</span>
+			<select id = "searchWay"></select>
+			<script type="text/javascript">
+				var select = document.getElementById("searchWay")
+				var option = ["仓库名称","仓库说明","仓库状态"];
+				for (var i = 0;i<option.length;i++) {
+					var op = new Option(option[i],option[i]);
+					select.options.add(op)
+				}
+			</script>
+			<input type="text" name="">
+			<div class="btn">
+				<button>查询</button>
+				<button onclick="change()">增加</button>
+				<button>启用</button>
+				<button>禁用</button>
+				<button>删除</button>
+			</div>
+		</div>
+		<div class="down">
+			<table cellpadding="0" cellspacing="0" border="1px" width="100%">
+				<tr>
+					<td width="5%"></td>
+					<td width="2%"><input type="checkbox" name="" value=""></td>
+					<td width="10%">供应商名称</td>
+					<td width="5%">状态</td>
+					<td width="5%">类别</td>
+					<td width="10%">联系人</td>
+					<td width="10%">联系电话</td>
+					<td width="10%">电子邮箱</td>
+					<td >地址</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><input type="checkbox" name="" value=""></td>
+					<td><a href="javascript:change()">顺心商贸有限公司</a></td>
+					<td>正常</td>
+					<td>生产商</td>
+					<td>丁顺</td>
+					<td>123456</td>
+					<td>123@qq.com</td>
+					<td>东风路17号</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
