@@ -1,8 +1,9 @@
 
+
 window.onload = function(){
-		var height = window.innerHeight-2;
+		var height = window.innerHeight;
 		document.getElementsByTagName('body')[0].style.height=height+"px";
-		var width = window.innerWidth-2;
+		var width = window.innerWidth;
 		document.getElementsByTagName('body')[0].style.width=width+"px";
 		var time_area = document.getElementsByClassName("time_area")[0];
 		time_area.innerHTML = new Date().toString();
@@ -12,8 +13,9 @@ function timeChange(){
 	var time_area = document.getElementsByClassName("time_area")[0];
 	time_area.innerHTML = new Date().toString();
 }
-window.onclick = function(){
-	var ele = window.event.srcElement;
+window.onclick = function(e){
+	var event = window.event || e;
+	var ele = event.srcElement||event.target;
 	if(ele.id=="selecter"){
 		var nextELe = ele.parentElement.children[1];
 		if(nextELe.style.display=="block"){
@@ -33,8 +35,8 @@ window.onclick = function(){
 	}else if(ele.parentElement.className=="down_right_top"){
 		changeHtm(ele);
 	}else{
-		// var secondMenu = document.getElementsByClassName("secondMenu")[0];
-		// secondMenu.style.display="none";
+		var secondMenu = document.getElementsByClassName("secondMenu")[0];
+		secondMenu.style.display="none";
 	}
 	
 }
